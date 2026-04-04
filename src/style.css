@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: rgba(61, 255, 160, 0.2);
+    color: #3DFFA0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080A0F;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #21262D;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3DFFA0;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-jade-400 text-xs tracking-widest uppercase mb-3;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-bold text-white;
+  }
+
+  .card-base {
+    @apply bg-carbon-800 border border-carbon-600 rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .card-base:hover {
+    @apply border-jade-400/40 shadow-lg shadow-jade-400/5;
+  }
+
+  .tag {
+    @apply font-mono text-xs px-2.5 py-1 rounded-md bg-carbon-700 text-slate-400 border border-carbon-600;
+  }
+
+  .nav-link {
+    @apply font-mono text-sm text-slate-400 hover:text-jade-400 transition-colors duration-200 relative;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-jade-500 text-carbon-950 font-display font-semibold text-sm hover:bg-jade-400 transition-all duration-200 hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-carbon-600 text-slate-300 font-display font-semibold text-sm hover:border-jade-400 hover:text-jade-400 transition-all duration-200 hover:-translate-y-0.5;
+  }
+}
+
+/* Grid noise texture overlay */
+.noise-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* Glow dot cursor effect on hero */
+.glow-dot {
+  background: radial-gradient(circle at 50% 50%, rgba(61, 255, 160, 0.12) 0%, transparent 70%);
+}
+
+/* Timeline connector line */
+.timeline-line {
+  background: linear-gradient(to bottom, #3DFFA0, transparent);
+}
+
+/* AOS custom overrides */
+[data-aos] {
+  pointer-events: none;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
