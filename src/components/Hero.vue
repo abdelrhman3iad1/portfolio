@@ -100,7 +100,7 @@
               <p class="section-label mb-6">Quick Overview</p>
 
               <div class="space-y-5">
-                <StatRow icon="💼" label="Current Role" value="Backend Engineer @ Bevatel" />
+                <StatRow icon="💼" label="Current Role" value="Backend Developer @ Bevatel" />
                 <StatRow icon="📍" label="Location" :value="data.location" />
                 <StatRow icon="🎓" label="Education" value="B.Sc. IT & Computer Science" />
                 <StatRow icon="📧" label="Email" :value="data.email" />
@@ -153,7 +153,7 @@ const nameParts = computed(() => props.data.name.split(' '))
 const firstName = computed(() => nameParts.value.slice(0, 2).join(' '))
 const lastName = computed(() => nameParts.value.slice(2).join(' '))
 
-const coreStack = ['PHP', 'Laravel', 'PostgreSQL', 'Redis', 'Docker', 'WebSockets']
+const coreStack = ['PHP', 'Laravel', 'PostgreSQL', 'Redis', 'Node.js', 'Docker']
 </script>
 
 <!-- StatRow as local component via inline -->
